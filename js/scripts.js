@@ -49,9 +49,9 @@ nextButton.addEventListener('click', function () {
 
 /**
  * Loads image sources for a specified number and path in an array and returns it
- * @param  {[String]} path [path of files, ex 'img/']
- * @param  {[Number]} num [the number of sources to load]
- * @return {[Array]}      [an array containing all the sources]
+ * @param  {String} path path of files, ex 'img/'
+ * @param  {Number} num the number of sources to load
+ * @return {[String]}      [an array containing all the sources]
  */
 
 function loadPicturesFromPath(path, num) {
@@ -69,8 +69,8 @@ function loadPicturesFromPath(path, num) {
 
 /**
  * Creates img elements on the dom if passed an array with url of images
- * @param {[Array]} sources [array containing the urls]
- * @param {[Array]} domElements [array containing the DOM Elements on which to create the imgs ]
+ * @param {[String]} sources [array containing the urls]
+ * @param {[String]} domElements [array containing the DOM Elements on which to create the imgs ]
  */
 
 function createElementsOnDom(sources, domElements) {
@@ -96,7 +96,7 @@ function createElementsOnDom(sources, domElements) {
 
 /**
  *  Removes the active class from both the carousel and thumbnails pictures
- * @param {number} index [The index at which the elements to 'hide' are located in the array] 
+ * @param {Number} index The index at which the elements to 'hide' are located in the array
  */
 
 function displayPicture(index) {
@@ -107,7 +107,7 @@ function displayPicture(index) {
 
 /**
  *  Add the active class to both the carousel and thumbnails pictures
- * @param {number} index [The index at which the elements to 'show' are located in the array] 
+ * @param {Number} index The index at which the elements to 'show' are located in the array
  */
 
 function hidePicture(index) {
