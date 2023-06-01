@@ -14,7 +14,8 @@ const sources = loadPicturesFromPath(path, numberOfPcitures);
 
 let currentIndex = 0;
 
-createElementsOnDom();
+// it's not necessary to pass the array but it improves readibility
+createElementsOnDom(sources);
 
 // load new elements from dom
 const carouselPictures = document.querySelectorAll('#carousel img');
@@ -46,6 +47,12 @@ nextButton.addEventListener('click', function () {
 
 })
 
+/**
+ * Loads image sources for a specified number and path in an array and returns it
+ * @param  {[String]} path [path of files, ex 'img/']
+ * @param  {[Number]} num [the number of sources to load]
+ * @return {[Array]}      [an array containing all the sources]
+ */
 
 function loadPicturesFromPath(path, num) {
 
@@ -60,8 +67,12 @@ function loadPicturesFromPath(path, num) {
     return pictures;
 }
 
+/**
+ * Creates img elements on the dom if passed an array with url of images
+ * @param {[Array]} sources [array containing the urls]
+ */
 
-function createElementsOnDom() {
+function createElementsOnDom(sources) {
 
     let imageElements = '';
 
@@ -78,12 +89,21 @@ function createElementsOnDom() {
 
 }
 
+/**
+ *  Removes the active class from both the carousel and thumbnails pictures
+ * @param {number} index [The index at which the elements to 'hide' are located in the array] 
+ */
 
 function displayPicture(index) {
 
     carouselPictures[index].classList.add('active');
     thumbnailPictures[index].classList.add('active');
 }
+
+/**
+ *  Add the active class to both the carousel and thumbnails pictures
+ * @param {number} index [The index at which the elements to 'show' are located in the array] 
+ */
 
 function hidePicture(index) {
 
