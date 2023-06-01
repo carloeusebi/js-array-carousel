@@ -27,7 +27,7 @@ prevButton.addEventListener('click', function () {
     hidePicture(currentIndex);
 
     //check if we are currently on the first image
-    currentIndex = currentIndex === 0 ? pictures.length : currentIndex--;
+    currentIndex = currentIndex === 0 ? sources.length - 1 : --currentIndex;
 
     displayPicture(currentIndex);
 
@@ -38,7 +38,7 @@ nextButton.addEventListener('click', function () {
     hidePicture(currentIndex);
 
     //check if we are currently on the first image
-    currentIndex = currentIndex === pictures.length ? currentIndex = 0 : currentIndex++;
+    currentIndex = currentIndex === sources.length - 1 ? 0 : ++currentIndex;
 
     displayPicture(currentIndex);
 
@@ -83,5 +83,8 @@ function displayPicture(index) {
     thumbnailPictures[index].classList.add('active');
 }
 
-function hidePicture(inded) { }
+function hidePicture(index) {
+    carouselPictures[index].classList.remove('active');
+    thumbnailPictures[index].classList.remove('active');
+}
 
