@@ -10,7 +10,9 @@ const nextButton = document.getElementById('next');
 const path = 'img/'
 const numberOfPcitures = 5;
 
-const pictures = loadPicturesFromPath(path, numberOfPcitures);
+const sources = loadPicturesFromPath(path, numberOfPcitures);
+
+console.log(sources);
 
 let currentIndex = 0;
 
@@ -41,9 +43,35 @@ nextButton.addEventListener('click', function () {
 })
 
 
-function loadPicturesFromPath(path) { }
+function loadPicturesFromPath(path, num) {
 
-function createElementsOnDom() { }
+    const pictures = [];
+
+    for (let i = 1; pictures.length < num; i++) {
+
+        const picture = `${path}0${i}.webp`;
+        pictures.push(picture);
+    }
+
+    return pictures;
+}
+
+function createElementsOnDom() {
+
+    let imageElements = '';
+
+    for (let i = 0; i < sources.length; i++) {
+
+        const source = sources[i];
+
+        const imageElement = `<img src="${source}" alt="Picture number ${i + 1}">`;
+
+        imageElements += imageElement;
+    }
+
+    gallery.innerHTML = thumbnails.innerHTML = imageElements;
+
+}
 
 function displayPicture(index) { }
 
