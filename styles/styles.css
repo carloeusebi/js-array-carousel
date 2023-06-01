@@ -1,11 +1,8 @@
-* {
-    box-sizing: border-box;
-    background-color: #202124;
-}
-
 body {
     font-family: sans-serif;
     text-align: center;
+    background-color: #202124;
+    color: white;
 }
 
 [class^="col"] {
@@ -14,6 +11,10 @@ body {
 
 img {
     object-fit: cover;
+}
+
+#carousel {
+    position: relative;
 }
 
 #gallery img {
@@ -26,9 +27,44 @@ img {
     display: block;
 }
 
+#carousel .button {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    cursor: pointer;
+    opacity: 0;
+
+    padding: 1.5rem;
+    font-size: 4rem;
+
+    transition: opacity 500ms;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+#carousel:hover .button {
+    opacity: 1;
+}
+
 #thumbnails img {
     width: 100%;
     height: calc(100% / 5);
+    position: relative;
+    display: inline-block;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    transition: filter 300ms;
+}
+
+#thumbnails img:not(.active) {
+    filter: brightness(.1);
 }
 
 /* EVERYTHING should be responsive :) */
