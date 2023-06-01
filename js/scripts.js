@@ -16,17 +16,19 @@ let currentIndex = 0;
 
 createElementsOnDom();
 
-//load new elements from dom
+// load new elements from dom
 const carouselPictures = document.querySelectorAll('#carousel img');
 const thumbnailPictures = document.querySelectorAll('#thumbnails img');
 
+// activate first picture
 displayPicture(currentIndex);
 
 prevButton.addEventListener('click', function () {
 
     hidePicture(currentIndex);
 
-    //check if we are currently on the first image
+    // i use sources as a comparison because it is the parent of both carousel and thumbnails array
+    // check if we are currently on the first image
     currentIndex = currentIndex === 0 ? sources.length - 1 : --currentIndex;
 
     displayPicture(currentIndex);
@@ -37,7 +39,7 @@ nextButton.addEventListener('click', function () {
 
     hidePicture(currentIndex);
 
-    //check if we are currently on the first image
+    // check if we are currently on the last image
     currentIndex = currentIndex === sources.length - 1 ? 0 : ++currentIndex;
 
     displayPicture(currentIndex);
@@ -84,6 +86,7 @@ function displayPicture(index) {
 }
 
 function hidePicture(index) {
+
     carouselPictures[index].classList.remove('active');
     thumbnailPictures[index].classList.remove('active');
 }
