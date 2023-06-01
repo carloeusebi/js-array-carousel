@@ -15,7 +15,7 @@ const sources = loadPicturesFromPath(path, numberOfPcitures);
 let currentIndex = 0;
 
 // it's not necessary to pass the array but it improves readibility
-createElementsOnDom(sources);
+createElementsOnDom(sources, [gallery, thumbnails]);
 
 // load new elements from dom
 const carouselPictures = document.querySelectorAll('#carousel img');
@@ -72,7 +72,7 @@ function loadPicturesFromPath(path, num) {
  * @param {[Array]} sources [array containing the urls]
  */
 
-function createElementsOnDom(sources) {
+function createElementsOnDom(sources, domElements) {
 
     let imageElements = '';
 
@@ -85,7 +85,12 @@ function createElementsOnDom(sources) {
         imageElements += imageElement;
     }
 
-    gallery.innerHTML = thumbnails.innerHTML = imageElements;
+    for (let i = 0; i < domElements.length; i++) {
+
+        const domElement = domElements[i];
+
+        domElement.innerHTML = imageElements;
+    }
 
 }
 
