@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    background-color: #202124;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+[class^="col"] {
+    padding: 0;
+}
+
+img {
+    object-fit: cover;
+}
+
+#gallery img {
+    width: 100%;
+    height: 600px;
+    display: none;
+}
+
+#gallery img.active {
+    display: block;
+}
+
+#thumbnails img {
+    width: 100%;
+    height: calc(100% / 5);
+}
+
+/* EVERYTHING should be responsive :) */
+
+@media screen and (min-width: 767px) {
+
+    #thumbnails img {
+        width: calc(100% / 5);
+        height: 150px;
+    }
+}
