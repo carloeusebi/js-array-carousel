@@ -70,6 +70,7 @@ function loadPicturesFromPath(path, num) {
 /**
  * Creates img elements on the dom if passed an array with url of images
  * @param {[Array]} sources [array containing the urls]
+ * @param {[Array]} domElements [array containing the DOM Elements on which to create the imgs ]
  */
 
 function createElementsOnDom(sources, domElements) {
@@ -91,7 +92,6 @@ function createElementsOnDom(sources, domElements) {
 
         domElement.innerHTML = imageElements;
     }
-
 }
 
 /**
