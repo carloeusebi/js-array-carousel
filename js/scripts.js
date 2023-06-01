@@ -12,11 +12,13 @@ const numberOfPcitures = 5;
 
 const sources = loadPicturesFromPath(path, numberOfPcitures);
 
-console.log(sources);
-
 let currentIndex = 0;
 
 createElementsOnDom();
+
+//load new elements from dom
+const carouselPictures = document.querySelectorAll('#carousel img');
+const thumbnailPictures = document.querySelectorAll('#thumbnails img');
 
 displayPicture(currentIndex);
 
@@ -56,6 +58,7 @@ function loadPicturesFromPath(path, num) {
     return pictures;
 }
 
+
 function createElementsOnDom() {
 
     let imageElements = '';
@@ -73,7 +76,12 @@ function createElementsOnDom() {
 
 }
 
-function displayPicture(index) { }
+
+function displayPicture(index) {
+
+    carouselPictures[index].classList.add('active');
+    thumbnailPictures[index].classList.add('active');
+}
 
 function hidePicture(inded) { }
 
