@@ -47,6 +47,20 @@ nextButton.addEventListener('click', function () {
 
 })
 
+// NEW FUNCTIONALITY: when click on a thumbnails that image becomes active
+
+for (let i = 0; i < thumbnailPictures.length; i++) {
+
+    thumbnailPictures[i].addEventListener('click', function () {
+
+        hidePicture(currentIndex);
+
+        currentIndex = i;
+
+        displayPicture(currentIndex);
+    });
+}
+
 /**
  * Loads image sources for a specified number and path in an array and returns it
  * @param  {String} path path of files, ex 'img/'
@@ -115,4 +129,3 @@ function hidePicture(index) {
     carouselPictures[index].classList.remove('active');
     thumbnailPictures[index].classList.remove('active');
 }
-
